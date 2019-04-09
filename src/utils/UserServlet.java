@@ -1,7 +1,6 @@
-package controller;
+package utils;
 
-import service.FoodListService;
-import service.UserService;
+import utils.UserService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

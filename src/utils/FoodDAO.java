@@ -1,7 +1,7 @@
-package dao;
+package utils;
 
 import java.util.List;
-import domain.Food;
+import utils.Food;
 
 public interface FoodDAO {
 	List<Food> search();

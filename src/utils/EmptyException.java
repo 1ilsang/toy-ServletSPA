@@ -1,4 +1,4 @@
-package exception;
+package utils;
 
 public class EmptyException extends Exception {
     public EmptyException(String message) {

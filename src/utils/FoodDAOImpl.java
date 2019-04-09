@@ -1,9 +1,7 @@
-package dao;
+package utils;
 
 import java.util.LinkedList;
 import java.util.List;
-import domain.Food;
-import utils.FoodSaxParser;
 
 public class FoodDAOImpl implements FoodDAO {
 	

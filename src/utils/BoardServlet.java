@@ -1,8 +1,6 @@
-package controller;
+package utils;
 
-import com.google.gson.Gson;
-import domain.Board;
-import service.BoardService;
+import utils.BoardService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,4 +1,4 @@
-package service;
+package utils;
 
 import java.io.IOException;
 import java.util.List;
@@ -7,9 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.google.gson.Gson;
-
-import dao.FoodDAOImpl;
-import domain.Food;
 
 public class FoodListService {
 	static FoodDAOImpl foodDAO;

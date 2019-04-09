@@ -1,8 +1,4 @@
-package service;
-
-import dao.BoardDAOImpl;
-import domain.Board;
-import utils.ResponseJSON;
+package utils;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

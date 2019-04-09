@@ -1,6 +1,4 @@
-package dao;
-
-import domain.User;
+package utils;
 
 import java.util.LinkedList;
 import java.util.List;

@@ -1,4 +1,4 @@
-package exception;
+package utils;
 
 // noti ::: ALL ERROR MESSAGES MUST USING THIS
 public interface CONST_ERR_MESSAGE {
