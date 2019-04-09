@@ -1,6 +1,6 @@
-package utils;
+package dao;
 
-import utils.User;
+import domain.User;
 
 import java.util.List;
 
