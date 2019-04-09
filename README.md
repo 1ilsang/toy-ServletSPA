@@ -7,7 +7,7 @@ SAFE FOOD
 
 주요 기능들
 
-<img src="flow.gif" width=70% />
+<img src="markdown/flow.gif" width=70% />
 
 1. 클래스 다이어그램 with UseCase
 
