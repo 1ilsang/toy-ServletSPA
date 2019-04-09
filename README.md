@@ -11,7 +11,7 @@ SAFE FOOD
 
 1. 클래스 다이어그램 with UseCase
 
-    <img src="usecase.png" width=70% />
+    <img src="markdown/usecase.png" width=70% />
 
    - front 가 완전히 분리되어 있으며 라이브러리를 의존하지 않아 `fetch` 로 `JSON` 통신.
    - 모든 Path 에 filter 를 통해 `UTF-8`, `CORS` 처리 : FRONT - BACK 이 다르므로 `Origin` 이슈가 있다.
