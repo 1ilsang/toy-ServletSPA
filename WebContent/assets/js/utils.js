@@ -2,13 +2,13 @@ const LOCAL_HOST = "http://127.0.0.1:8080";
 
 document.addEventListener('DOMContentLoaded', function () {
     let loginBtn = document.getElementById('login-btn');
-    if (isLogin('JSESSIONID')) loginBtn.innerText = "Hello!";
+    if (isLogin()) loginBtn.innerText = "Hello!";
 
     startTypo();
 });
 
-function isLogin(cookieName) {
-    if (getCookie(cookieName) !== null) return true;
+function isLogin() {
+    if (getCookie('JSESSIONID') !== null) return true;
     return false;
 }
 
@@ -44,9 +44,16 @@ function makeInputTag(type, id, name) {
 }
 
 function submitFetch(action, idInput, pwInput) {
-    if(action === 'login') action = 'user.do?action=login';
-    else if(action === 'register') action = 'user.do?action=register';
+    if (action === 'login') action = 'user.do?action=login';
+    else if (action === 'register') action = 'user.do?action=register';
+    else if (action === 'deleteBtn') action = 'user.do?action=delete';
+    else if (action === 'boardInsert') action = 'board.do?action=insert';
+    else if (action === 'boardDelete') {
+        action = 'board.do?action=delete';
+        idInput.value = idInput.innerText;
+    }
 
+    if (pwInput === undefined) pwInput = {'value': 0};
     fetch(`${LOCAL_HOST}/${action}`, {
         method: 'post',
         type: 'json',
@@ -54,20 +61,29 @@ function submitFetch(action, idInput, pwInput) {
             "Content-Type": "application/x-www-form-urlencoded"
         },
         body: `id=${idInput.value}&pw=${pwInput.value}`
-    })
-    // .then(res => {return res.json();})
-        .then(res => {
-            if (res.status === 200) {
+    }).then(res => {
+        console.log(res.status, action);
+        if (res.status === 200) {
+            if (action === 'user.do?action=delete') {
+                alert('삭제 완료!');
+                location.href = '#';
+            } else if (action === 'board.do?action=insert' || action === 'board.do?action=delete') {
+                fetch(`${LOCAL_HOST}/board.do?action=all`).then(res => {
+                    return res.json()
+                }).then(res => {
+                    paintBoardModalTable(res);
+                });
+            } else {
                 let loginBtn = document.getElementById('login-btn');
                 loginBtn.innerText = "Hello!";
                 location.href = '#';
-            } else {
-                // 모달 UI 변환(재로그인)
-                let labelDesc = document.getElementById('labelDesc');
-                labelDesc.style.color = 'red';
-                labelDesc.innerText = " ID 혹은 비밀번호를 확인해 주세요";
             }
-        });
+        } else {
+            let labelDesc = document.getElementById('labelDesc');
+            labelDesc.style.color = 'red';
+            labelDesc.innerText = " 입력을 확인해 주세요";
+        }
+    });
 }
 
 function startTypo() {

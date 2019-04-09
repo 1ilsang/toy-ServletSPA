@@ -16,17 +16,9 @@ public class UserServlet extends HttpServlet {
         System.out.println("POST] UserServlet :::");
         String action = request.getParameter("action");
 
-        if(action.equals("login")) {
-            userService.login(request, response);
-        } else if(action.equals("register")) {
-            userService.register(request, response);
-        } else if(action.equals("remove")) {
-            userService.remove(request, response);
-        }
-//        System.out.println(session.getId() + ", " + session.getAttribute(id));
-//        String json = new Gson().toJson(new User("1", "2"));
-//        response.setContentType("application/json");
-//        response.getWriter().write(json);
+        if(action.equals("login")) userService.login(request, response);
+        else if(action.equals("register")) userService.register(request, response);
+         else if(action.equals("delete")) userService.remove(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
