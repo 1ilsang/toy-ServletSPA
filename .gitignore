@@ -3,3 +3,7 @@
 out/
 lib/
 .DS_Store/
+.project
+.settings
+.classpath
+build/
