@@ -64,7 +64,7 @@ my-btn:hover {
 }
 
 .hover4:hover {
-    box-shadow: 200px 0 0 0 rgba(0, 0, 0, 0.25) inset, -200px 0 0 0 rgba(0, 0, 0, 0.25) inset;
+    box-shadow: 200px 0 0 0 rgba(0, 0, 200, 0.25) inset, -200px 0 0 0 rgba(0, 0, 0, 0.25) inset;
 }
 
 .modal-window {
@@ -132,7 +132,7 @@ canvas {
     position: absolute;
 }
 
-#login-btn {
+.nav-btn {
     margin-top: 2%;
     margin-right: 3%;
     float: right;
@@ -151,12 +151,12 @@ canvas {
     outline: none;
 }
 
-#login-btn:hover {
+.nav-btn:hover {
     /*background: #fff;*/
     color: #1AAB8A;
 }
 
-#login-btn:before, #login-btn:after {
+.nav-btn:before, .nav-btn:after {
     content: '';
     position: absolute;
     top: 0;
@@ -167,14 +167,50 @@ canvas {
     transition: 400ms ease all;
 }
 
-#login-btn:after {
+.nav-btn:after {
     right: inherit;
     top: inherit;
     left: 0;
     bottom: 0;
 }
 
-#login-btn:hover:before, #login-btn:hover:after {
+.nav-btn:hover:before, .nav-btn:hover:after {
     width: 100%;
     transition: 800ms ease all;
+}
+
+#cursor {
+    position: relative;
+    /*margin-left: 10px;*/
+    visibility: hidden;
+    opacity: 0.5;
+}
+
+#typing {
+    text-shadow: 4px 4px 4px gray;
+}
+
+.main-banner {
+    background-color: antiquewhite;
+}
+
+.main-banner img {
+    position: relative;
+}
+
+.main-banner p {
+    position: absolute;
+    margin-left: 20%;
+    font-size: 100px;
+    margin-top: 15%;
+    color: white;
+    z-index: 999;
+}
+
+video {
+    margin: auto;
+}
+
+ul {
+    list-style-type: none;
 }
