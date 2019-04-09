@@ -7,7 +7,9 @@ SAFE FOOD
 
 주요 기능들
 
-<img src="markdown/flow.gif" width=70% />
+<img src="markdown/flow.gif" width=100% />
+
+
 
 1. 클래스 다이어그램 with UseCase
 
@@ -17,6 +19,9 @@ SAFE FOOD
    - 모든 Path 에 filter 를 통해 `UTF-8`, `CORS` 처리 : FRONT - BACK 이 다르므로 `Origin` 이슈가 있다.
    - 모든 요청은 `Controller` 가 분기하며 `Service` 가 모든 로직을 처리한다.
    - `DAO` 는 요청에 따라 데이터를 관리하는 주체.
+
+
+
 
 2. 기본(필수) 기능
 
@@ -30,12 +35,18 @@ SAFE FOOD
     <img src="markdown/main.png" width=70%/>
     <img src="markdown/login.png" width=70% />
     <img src="markdown/loginfail.png" width=70% />
+
+
+
     
 3. 추가 기능
 
     - `hit` 변수를 두어 검색마다 값들을 참조, 제목에 표시
 
     <img src="markdown/search3.png" width=70%/>
+
+
+
 
 4. 심화 기능
 
